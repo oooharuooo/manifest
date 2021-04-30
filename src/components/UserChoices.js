@@ -8,11 +8,11 @@ const UserChoices = ({ choice }) => {
     const { setShowModal } = useChatContext();
     return (
         <>
-            {/* Show text depends on user choice */}
             <EditButton onClick={()=>setShowModal(true)}>
                 <img src={editIcon} alt="Edit" />
             </EditButton>
-            <p>{choice === "Yes" ? "Yes,I do" : "No,I don't"}</p>
+            {/* Show text depends on user choice */}
+            <p>{choice}</p>
         </>
     )
 }
