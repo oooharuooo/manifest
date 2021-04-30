@@ -1,11 +1,15 @@
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 import avatar from './Asset/62.png'
+import styled from 'styled-components';
 
 import Test from "./Test";
 import Header from "./components/Header"
 
+import { useChatContext} from "./context/ChatContext"
+
 function App() {
+  const { myUser } = useChatContext();
   const config = {
     width: "500px",
     botAvatar: `${avatar}`,
@@ -45,25 +49,33 @@ function App() {
   const theme = {
   background: '#F4f4f4',
   fontFamily:"SFUI",
-  headerBgColor: '#e4e4e4',
-  headerFontColor: '#4e78f6',
-  headerFontSize: '15px',
   botBubbleColor: '#e4e4e4',
   botFontColor: '#000',
   userBubbleColor: '#fff',
     userFontColor: '#4a4a4a',
-    rscHeader: "#fff",
   };
 
-
-  const customProps = {
-    botAvatar: `${avatar}`,
-  }
+console.log(myUser)
   return (
+    <Wrapper>
       <ThemeProvider theme={theme}>
-      <ChatBot steps={steps}  {...config} headerComponent={<Header/>}/>
-        </ThemeProvider>
+      <ChatBot
+        className="center"
+        steps={steps}
+        {...config}
+        headerComponent={<Header />} />
+      </ThemeProvider>
+      </Wrapper>
   );
 }
 
 export default App;
+
+const Wrapper = styled.div`
+.rsc-container{
+  height:100%
+}
+rsc-loading{
+  background-color:red;
+}
+`
