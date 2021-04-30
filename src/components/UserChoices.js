@@ -5,9 +5,10 @@ import styled from 'styled-components'
 import editIcon from '../Asset/Symbol 9 – 10.png'
 
 const UserChoices = ({ choice }) => {
-    const { setShowModal } = useChatContext()
+    const { setShowModal } = useChatContext();
     return (
         <>
+            {/* Show text depends on user choice */}
             <EditButton onClick={()=>setShowModal(true)}>
                 <img src={editIcon} alt="Edit" />
             </EditButton>

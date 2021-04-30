@@ -1,30 +1,29 @@
 import React from 'react'
-
 import ChatBot from 'react-simple-chatbot';
+import { useChatContext } from "../context/ChatContext"
+import Header from "./Header"
+import EditConfirm from "./EditConfirm";
+
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
-
 import avatar from '../Asset/62.png'
-
-
-import Header from "./Header"
-
-import { useChatContext } from "../context/ChatContext"
-import EditConfirm from "./EditConfirm";
 
 const MsgDisplay = () => {
     const { showModal,steps, } = useChatContext();
     
   return (
     <Wrapper >
-      <ThemeProvider theme={theme}>
-        { showModal && <EditConfirm/>}
-      <ChatBot
-        steps={steps}
-        {...config}
-        className={showModal && `brightnessScreen`}
-        headerComponent={<Header />} />
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          {/* Only show Modal component when user click on EditButton or Main Menu */}
+            { showModal && <EditConfirm/>}
+          {/* Passing steps from context */}
+            <ChatBot
+              steps={steps}
+              {...config}
+              // show Modal and blur out main screen
+              className={showModal && `brightnessScreen`}
+              headerComponent={<Header />} />
+        </ThemeProvider>
       </Wrapper>
   );
 }

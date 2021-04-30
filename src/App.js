@@ -3,9 +3,7 @@ import MsgDisplay from "./components/MsgDisplay"
 
 const App = () => {
   return (
-    <>
       <MsgDisplay/>
-    </>
   )
 }
 

@@ -14,6 +14,7 @@ const Header = () => {
         <Wrapper>
             <div className="title">
                 <h1>Manifest</h1>
+                {/* Show Modal Component when user click */}
                 <button onClick={()=>setShowModal(true)}>
                     <img src={menu} alt="menu" />
                 </button>
@@ -30,7 +31,7 @@ const Header = () => {
 export default Header
 
 
-
+// Styling
 const Wrapper = styled.div`
  display:flex;
  flex-direction:column;

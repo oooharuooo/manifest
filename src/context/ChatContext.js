@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import UserChoices from "../components/UserChoices"
 
+// Create ContextAPI
 const ChatContext = React.createContext();
 
 export const ChatProvider = ({ children }) => {
 
 	const [showModal, setShowModal] = useState(false);
 
+  // Passing steps array to MsgDisplay
 	  const steps = [
     {
       id: 'question-page-1',
@@ -34,7 +36,8 @@ export const ChatProvider = ({ children }) => {
 		</ChatContext.Provider>
 	);
 };
-// make sure use
+
+// make sure use ContextAPI function
 export const useChatContext = () => {
 	return useContext(ChatContext);
 };
