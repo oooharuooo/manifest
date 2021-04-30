@@ -9,17 +9,20 @@ import avatar from '../Asset/62.png'
 
 import Header from "./Header"
 
-import { useChatContext} from "../context/ChatContext"
+import { useChatContext } from "../context/ChatContext"
+import EditConfirm from "./EditConfirm";
 
 const MsgDisplay = () => {
-    const { myUser, steps, } = useChatContext();
+    const { showModal,steps, } = useChatContext();
     
   return (
-    <Wrapper>
+    <Wrapper >
       <ThemeProvider theme={theme}>
+        { showModal && <EditConfirm/>}
       <ChatBot
         steps={steps}
         {...config}
+        className={showModal && `brightnessScreen`}
         headerComponent={<Header />} />
       </ThemeProvider>
       </Wrapper>
@@ -39,9 +42,12 @@ export default MsgDisplay
   fontFamily:"SFUI",
   botBubbleColor: '#e4e4e4',
   botFontColor: '#000',
-  };
-
+};
+  
 const Wrapper = styled.div`
+.brightnessScreen {
+    filter: brightness(70%);
+}
 .rsc{
     &-container{
         height:100%
@@ -78,7 +84,7 @@ const Wrapper = styled.div`
     
     background: #4E78F6;
     color: #FFFFFF;
-    
+
     border-radius: 0 0 15px 15px;
     font-size: 15px;
     padding: 1px;

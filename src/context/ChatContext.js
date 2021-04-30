@@ -5,7 +5,7 @@ const ChatContext = React.createContext();
 
 export const ChatProvider = ({ children }) => {
 
-	const [myUser, setMyUser] = useState("dat");
+	const [showModal, setShowModal] = useState(false);
 
 	  const steps = [
     {
@@ -29,7 +29,7 @@ export const ChatProvider = ({ children }) => {
   ];
 	
 	return (
-		<ChatContext.Provider value={{myUser,steps}}>
+		<ChatContext.Provider value={{showModal,setShowModal,steps}}>
 			{children}
 		</ChatContext.Provider>
 	);

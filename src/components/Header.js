@@ -1,4 +1,6 @@
 import React from 'react';
+import { useChatContext } from '../context/ChatContext'
+
 
 import styled from 'styled-components';
 import menu from '../Asset/Group 1298.png';
@@ -6,11 +8,13 @@ import profileImage from "../Asset/61.png";
 
 
 const Header = () => {
+    const { setShowModal } = useChatContext();
+    
     return (
         <Wrapper>
             <div className="title">
                 <h1>Manifest</h1>
-                <button>
+                <button onClick={()=>setShowModal(true)}>
                     <img src={menu} alt="menu" />
                 </button>
             </div>

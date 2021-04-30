@@ -6,6 +6,9 @@ body {
   align-items: center;
 }
 
+#root {
+  position: relative;
+}
 @font-face {
 font-family: "SFUI";
 src: local("SFUI"),
