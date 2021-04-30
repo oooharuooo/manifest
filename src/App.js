@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import avatar from './Asset/62.png'
 
 import Test from "./Test";
+import Header from "./components/Header"
 
 function App() {
   const config = {
@@ -11,11 +12,6 @@ function App() {
 };
 
   const steps = [
-    {
-      id: '0',
-      component: <Test/>,
-      trigger: '1',
-    },
     {
       id: '1',
       message: 'You can add custom components',
@@ -48,7 +44,7 @@ function App() {
 
   const theme = {
   background: '#F4f4f4',
-  fontFamily: 'Helvetica Neue',
+  fontFamily:"SFUI",
   headerBgColor: '#e4e4e4',
   headerFontColor: '#4e78f6',
   headerFontSize: '15px',
@@ -65,7 +61,7 @@ function App() {
   }
   return (
       <ThemeProvider theme={theme}>
-        <ChatBot steps={steps}  {...config}/>
+      <ChatBot steps={steps}  {...config} headerComponent={<Header/>}/>
         </ThemeProvider>
   );
 }
