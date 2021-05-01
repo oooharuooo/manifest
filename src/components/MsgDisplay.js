@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ChatBot from "react-simple-chatbot";
 import { useChatContext } from "../context/ChatContext";
 import Header from "./Header";
@@ -49,6 +49,7 @@ const Wrapper = styled.div`
 	.brightnessScreen {
 		filter: brightness(70%);
 	}
+
 	.react-calendar {
 		width: fit-content;
 		background-color: #bfa9a9;
@@ -77,11 +78,14 @@ const Wrapper = styled.div`
 
 				font-family: "SFUISemiBold";
 				font-size: 20px;
-				padding: 1rem 3rem;
+				padding: 1rem 1.5rem;
 
 				border: 0;
 				border-radius: 15px;
 			}
+		}
+		&-ts-bot {
+			max-width: 80%;
 		}
 		&-cs,
 		&-ts-user {
@@ -95,6 +99,7 @@ const Wrapper = styled.div`
 			border-radius: 0 0 15px 15px;
 			font-size: 15px;
 			padding: 1px;
+			margin-right: 1rem;
 
 			animation: gZmgDU 0.3s ease forwards;
 			-webkit-animation: gZmgDU 0.3s ease forwards;

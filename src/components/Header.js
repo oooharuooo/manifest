@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useChatContext } from "../context/ChatContext";
-
 
 import styled from "styled-components";
 import menu from "../Asset/Group 1298.png";
@@ -8,12 +7,9 @@ import profileImage from "../Asset/61.png";
 
 const Header = () => {
 	const { setShowModal } = useChatContext();
-	const [startDate, setStartDate] = useState(new Date());
-
 	return (
 		<Wrapper>
 			<div className="title">
-				
 				<h1>Manifest</h1>
 				{/* Show Modal Component when user click */}
 				<button onClick={() => setShowModal(true)}>
@@ -22,7 +18,7 @@ const Header = () => {
 			</div>
 			<div className="profile">
 				<img src={profileImage} alt="HenryProfilePicture" />
-				<h1>Henr</h1>
+				<h1>Henry</h1>
 				<p>TRANSFER SPECIALIST</p>
 			</div>
 		</Wrapper>
